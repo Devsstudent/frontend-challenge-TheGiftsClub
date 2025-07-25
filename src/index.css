@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.google-gradient {
+  background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
