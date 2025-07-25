@@ -2,9 +2,9 @@ import { useCampaignContext } from "../context/CampaignContext";
 import { Alert, Box, Input, Modal } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "./CustomButton";
 import { useState } from "react";
-import { CircleWrapper } from "../components/DropdownAction";
+import { CircleWrapper } from "./DropdownAction";
 
 export default function AlertPin() {
   const { pin, setPin } = useCampaignContext();
