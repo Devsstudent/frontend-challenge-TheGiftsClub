@@ -1,13 +1,16 @@
 import { Container } from "@mui/material";
 
 import CampaignForm from "./campaign/page";
-import { CampaignContextProvider } from "./campaignContext";
+import { CampaignContextProvider } from "./context/CampaignContext";
+import { FormMethodsProvider } from "./context/FormContext";
 
 function App() {
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <CampaignContextProvider>
-        <CampaignForm />
+        <FormMethodsProvider>
+          <CampaignForm />
+        </FormMethodsProvider>
       </CampaignContextProvider>
     </Container>
   );
