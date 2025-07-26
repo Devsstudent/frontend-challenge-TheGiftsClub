@@ -7,6 +7,7 @@ interface SectionHeaderProps {
   title: string;
   description: string;
   hideArrow?: boolean;
+  width?: "full" | "medium";
   defaultExpanded?: boolean;
   children: React.ReactNode;
   actionButton?: {
@@ -20,6 +21,7 @@ interface SectionHeaderProps {
 const SectionHeader: React.FC<SectionHeaderProps> = ({
   title,
   description,
+  width = "full",
   hideArrow = false,
   children,
   actionButton,
@@ -50,7 +52,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
               <h2 className="text-2xl font-bold mb-1 text-black drop-shadow-sm">
                 {title}
               </h2>
-              <p className="text-black text-sm font-medium leading-relaxed max-w-md">
+              <p className={`text-black text-sm font-medium leading-relaxed ${width === "full" ? "" : "max-w-md"}`}>
                 {description}
               </p>
             </div>
