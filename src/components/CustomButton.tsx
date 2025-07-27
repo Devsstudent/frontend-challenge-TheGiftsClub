@@ -48,7 +48,7 @@ const CustomButton = React.forwardRef<HTMLButtonElement, CustomButtonProps>(({
   };
 
   // Base classes that apply to all buttons
-  const baseClasses = 'hover:cursor-pointer rounded-lg normal-case transition-colors duration-200';
+  const baseClasses = 'hover:cursor-pointer rounded-md normal-case transition-colors duration-200';
   
   // Width classes
   const widthClasses = fullWidth ? 'w-full' : '';
