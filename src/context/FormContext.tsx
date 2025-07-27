@@ -64,12 +64,27 @@ export const FormMethodsProvider: React.FC<FormMethodsProviderProps> = ({
             type: "SPONSORSHIP"
         }],
         colors: {
-          primary: "#000000",
-          secondary: "#FFFFFF",
+          primary: "#3f5efb",
+          secondary: "#ff5733",
         },
         disabled: false,
         game_type: "WHEEL",
-        gifts: [],
+        gifts: [{
+          id: "gift-1",
+          icon: "EAT",
+          initial_limit: 15,
+          limit: 15,
+          name: "Frite",
+          type: "EAT",
+        }, {
+          id: "gift-2",
+          icon: "LOSS",
+          initial_limit: 10,
+          limit: 10,
+          name: "Sac Jacquemus",
+          type: "LOSS",
+
+        }],
         retrievalConditions: [],
         logo_uri: "",
       },
