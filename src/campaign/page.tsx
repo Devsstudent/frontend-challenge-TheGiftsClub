@@ -2,10 +2,13 @@ import { Box } from "@mui/material";
 import { useCampaignContext } from "../context/CampaignContext";
 import Header from "../components/Header";
 import SectionHeader from "../components/SectionHeader";
-import {Plus } from "lucide-react";
+import { Gift, Plus } from "lucide-react";
 import ActionTable from "../components/ActionTable";
 import AlertPin from "../components/AltertPin";
 import GameSelection from "../components/GameSelection";
+import { GameDesign } from "../components/GameDesign";
+import { GainConfig } from "../components/GainConfig";
+import { GiftCondition } from "../components/GiftCondition";
 
 function CampaignForm() {
   /*
@@ -48,7 +51,7 @@ function CampaignForm() {
         <Button variant="contained" className="hover:bg-blue-600 rounded-lg">
           Submit
         </Button>*/}
-      <div >
+      <div>
         <SectionHeader
           title="ORGANISEZ VOS ACTIONS"
           hideArrow={true}
@@ -68,9 +71,30 @@ function CampaignForm() {
         <SectionHeader
           title="CHOIX DU JEUX"
           description="Sélectionnez parmi 4 jeux interactifs pour engager vos utlisateurs et créer une expérience unique."
-          >
-            <GameSelection />
-          </SectionHeader>
+        >
+          <GameSelection />
+        </SectionHeader>
+        <SectionHeader
+          title="PERSONNALISASEZ VOTRE JEU"
+          description="Importez votre logo et sélectionnez vos couleurs pour créer un jeu à l'image de votre marque. Offrez à vos clients une expérience unique, entièrement personnalisée."
+          width="medium"
+        >
+          <GameDesign />
+        </SectionHeader>
+        <SectionHeader
+          title="AJOUTEZ ET CONFIGUREZ VOS GAINS"
+          description="Indiquez les récompenses que vos clients pourront gagner. Offrez des cadeaux attractifs pour augmenter leur engagement et leur fidélité."
+          width="medium"
+        >
+          <GainConfig />
+        </SectionHeader>
+        <SectionHeader
+          title="DÉFINISSEZ LES CONDITIONS POUR RÉCUPÉRER LES CADEAUX"
+          description="Paramétrez si vos clients doivent remplir une condition (ex: montant minimum d'achat) pour pouvoir repartir avec leur cadeau."
+          width="medium"
+        >
+          <GiftCondition />
+        </SectionHeader>
       </div>
     </Box>
   );
