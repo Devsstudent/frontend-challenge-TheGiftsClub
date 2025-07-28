@@ -49,7 +49,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           <div className="relative z-10 flex justify-between">
             <div className="flex hoverflow-hidden">
               <CustomBadge color="blue" width="3" />
-              <div className="flex-1">
+              <div className="flex-1 ml-4">
                 <h2 className="text-2xl font-bold mb-1 text-black drop-shadow-sm">
                   {title}
                 </h2>
