@@ -6,7 +6,6 @@ const AddAction = ({
 }: {
   action?: Action;
 }) => {
-    console.log("AddAction component", action);
   return (
     <span
       className="text-blue-700 text-sm flex items-center justify-start gap-2 hover:cursor-pointer caca"

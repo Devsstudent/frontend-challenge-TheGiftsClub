@@ -76,7 +76,6 @@ const DropdownAction = ({ action }: { action: Action }) => {
   const actions = methods.getValues("configuration.actions");
   // getStringPriority  pour la value du add
   const [selectedValue, setSelectedValue] = useState(action?.type);
-  console.log("DropdownAction component", action, selectedValue);
 
   useEffect(() => {
     if (action?.type) {
@@ -111,7 +110,6 @@ const DropdownAction = ({ action }: { action: Action }) => {
 
       // Update form values
       methods.setValue("configuration.actions", updatedActions);
-      console.log("Adding action:", action);
     }
     // Update the existing action with new type
     // TO DO complexité dans l'ajout avec des valeurs par defaut pour target.

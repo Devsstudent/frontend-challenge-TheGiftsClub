@@ -149,8 +149,6 @@ const ActionTable = () => {
   const watchActions = methods.watch("configuration.actions");
 
   useEffect(() => {
-    console.log("Actions in ActionTable:", actions);
-    
     // Calculer les doublons
     const typeCount = actions.reduce(
       (acc, action) => {

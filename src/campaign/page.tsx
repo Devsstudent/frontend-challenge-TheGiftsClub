@@ -36,9 +36,6 @@ function CampaignForm() {
   );
 }*/
 
-  const { value } = useCampaignContext();
-  console.log("Campaign Context Value:", value);
-
   return (
     <Box>
       <Header />
