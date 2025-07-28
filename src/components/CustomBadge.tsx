@@ -16,7 +16,7 @@ export default function CustomBadge({
     purple: 'bg-purple-600',
     pink: 'bg-pink-600',
     indigo: 'bg-indigo-600',
-    gray: 'bg-gray-600',
+    gray: 'bg-gray-400',
     orange: 'bg-orange-400',
   };
 
