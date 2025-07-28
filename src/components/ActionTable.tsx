@@ -171,7 +171,7 @@ const ActionTable = () => {
   }, [watchActions]);
 
   return (
-    <div className="p-6">
+    <div className="py-6">
       <TableContainer className="border border-gray-200 rounded-xl">
         <Table className="table-auto">
           <TableHead>
