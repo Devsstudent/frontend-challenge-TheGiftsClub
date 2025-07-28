@@ -1,15 +1,26 @@
 import CustomBadge from "./CustomBadge";
-import CustomButton from "./CustomButton";
-import { MdUpload } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { useState } from "react";
+import { useFormContext } from "react-hook-form";
+import { UploadFile } from "./UploadFile";
 
 export const GameDesign = () => {
-  const [selectedColors, setSelectedColors] = useState(["#3F5EFB", "#F39C12"]);
+  const { setValue, watch } = useFormContext();
+  const primaryColor = watch("configuration.colors.primary");
+  const secondaryColor = watch("configuration.colors.secondary");
+  const profile = watch("profile");
+  const [selectedColors, setSelectedColors] = useState([
+    primaryColor,
+    secondaryColor,
+  ]);
 
-  const handleColorChange = (index, color) => {
+  const handleColorChange = (index: number, color: string) => {
     const newColors = [...selectedColors];
     newColors[index] = color;
+    setValue(
+      `configuration.colors.${index === 0 ? "primary" : "secondary"}`,
+      color,
+    );
     setSelectedColors(newColors);
   };
   return (
@@ -20,19 +31,8 @@ export const GameDesign = () => {
             <CustomBadge color="blue" height="6" width="3" />
             <div className="text-gray-700">Glissez-déposez votre logo</div>
           </div>
-          <div className="h-[90%] flex flex-col px-[10vw] py-[10vh] mt-4 border-2 border-dashed border-gray-300 rounded-md justify-center items-center">
-            <MdUpload
-              color="white"
-              className="h-10 w-10 p-1 bg-gray-300 rounded-full mb-4"
-            />
-
-            <CustomButton
-              variant="primary"
-              className="mt-4 text-sm"
-              onClick={() => alert("Logo uploaded")}
-            >
-              SÉLECTIONNER UN FICHIER
-            </CustomButton>
+          <div className="h-[100%] flex pb-7">
+            <UploadFile />
           </div>
         </div>
         <div className="w-1/2 flex">
@@ -41,14 +41,19 @@ export const GameDesign = () => {
               <CustomBadge color="blue" height="6" width="3" />
               <div className="text-gray-700">Importer vos couleurs</div>
             </div>
-            <div className="flex flex-col items-center pt-[10vh]">
+            <div
+              className={`flex flex-col items-center pt-[10vh] ${profile === "BASIC" ? "opacity-50 cursor-not-allowed" : ""}`}
+            >
               <div className="flex gap-4 mb-4">
                 {selectedColors.map((color, index) => (
                   <div key={index} className="flex flex-col items-center pr-10">
-                    <label className="cursor-pointer">
+                    <label
+                      className={`${profile === "BASIC" ? "cursor-not-allowed" : "cursor-pointer"}`}
+                    >
                       <input
                         type="color"
                         value={color}
+                        disabled={profile === "BASIC"}
                         onChange={(e) =>
                           handleColorChange(index, e.target.value)
                         }
@@ -65,9 +70,10 @@ export const GameDesign = () => {
                     </label>
                     <input
                       type="text"
+                      disabled={profile === "BASIC"}
                       value={color}
                       onChange={(e) => handleColorChange(index, e.target.value)}
-                      className="mt-6 w-20 text-center border border-gray-300 rounded-md p-2 text-xs"
+                      className={`${profile === "BASIC" ? "cursor-not-allowed" : ""} mt-6 w-20 text-center uppercase border border-gray-300 rounded-md p-2 text-xs`}
                     />
                   </div>
                 ))}

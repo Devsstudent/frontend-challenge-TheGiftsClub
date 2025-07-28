@@ -65,7 +65,7 @@ export const FormMethodsProvider: React.FC<FormMethodsProviderProps> = ({
         }],
         colors: {
           primary: "#3f5efb",
-          secondary: "#ff5733",
+          secondary: "#F39C12",
         },
         disabled: false,
         game_type: "WHEEL",
