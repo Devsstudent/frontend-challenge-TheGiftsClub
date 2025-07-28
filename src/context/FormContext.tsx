@@ -71,18 +71,18 @@ export const FormMethodsProvider: React.FC<FormMethodsProviderProps> = ({
         game_type: "WHEEL",
         gifts: [{
           id: "gift-1",
-          icon: "EAT",
+          icon: "",
           initial_limit: 15,
           limit: 15,
           name: "Frite",
           type: "EAT",
         }, {
           id: "gift-2",
-          icon: "LOSS",
-          initial_limit: 10,
+          icon: "",
+          initial_limit: -1,
           limit: 10,
           name: "Sac Jacquemus",
-          type: "LOSS",
+          type: "DISCOUNT",
 
         }],
         retrievalConditions: [],
