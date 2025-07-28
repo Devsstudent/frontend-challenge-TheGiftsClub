@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Global font family */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .google-gradient {
   background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
   -webkit-background-clip: text;
